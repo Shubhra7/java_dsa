@@ -55,6 +55,11 @@ public class NumberOfProvinces {
 
         System.out.println("The adjacent List: "+arr);
         int v=3;
+
+        // arr.add(new ArrayList<>(Arrays.asList(1,1)));
+        // arr.add(new ArrayList<>(Arrays.asList(1,1)));
+        // int v=2;
+
         int count = numProvinces(arr,v);
 
         System.out.println("The number of provinces is: "+count);
