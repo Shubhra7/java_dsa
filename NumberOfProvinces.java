@@ -18,24 +18,31 @@ public class NumberOfProvinces {
 
             ArrayList<ArrayList<Integer>> adjLs = new ArrayList<ArrayList<Integer>>();
 
+            // need in java for making the space in ArrayList
             for(int i=0;i<v;i++){
                 adjLs.add(new ArrayList<Integer>());
             }
 
+            // from matrix making adjacent list
             for(int i=0;i<v;i++){
                 for(int j=0;j<v;j++){
                     if(adj.get(i).get(j) == 1 && i!=j){
+                        System.out.println(i+" "+j);
                         adjLs.get(i).add(j);
                         adjLs.get(j).add(i);
                     }
                 }
             }
 
+            System.out.println(adjLs);
+
             int vis[] = new int[v];
             int cnt = 0;
             for(int i=0;i<v;i++){
+                if(vis[i]==0){  // checking for previously visited 
                 cnt ++;
                 dfs(i,adjLs,vis);
+                }
             }
             return cnt;
         }
